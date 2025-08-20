@@ -1,15 +1,17 @@
-# Squidle+ API Minimal Example
+# Squidle+ API Extended Example
 
-This repository provides a minimal working example of interfacing with the outdated **Squidle+ API** to retrieve image annotations using Python. It demonstrates querying a public dataset, handling pagination, and printing labelled data.
+This repository provides an updated working example of interfacing with the **Squidle+ API** to retrieve both image annotations and associated media. It demonstrates filtering by label schemes, downloading annotations in bulk, and saving both annotations and images locally.
 
 ---
 
 ## 🔧 What It Does
 
 - Connects to the Squidle+ API using an API key  
-- Retrieves annotations for a chosen dataset  
-- Handles paginated responses  
-- Outputs raw label data
+- Filters annotation sets by a chosen **label scheme** (e.g., Catami 1.4 extended)  
+- Retrieves all annotations from matching public and finalised sets, handling pagination  
+- Saves annotations to a CSV file (including media ID, lineage, label, and point coordinates)  
+- Fetches all associated media for each annotation set  
+- Downloads media images and stores them in a local folder  
 
 ---
 
@@ -18,45 +20,43 @@ This repository provides a minimal working example of interfacing with the outda
 ### 1. Install Requirements
 
 ```bash
-pip install sqapi
+pip install sqapi requests
 ```
 
 ### 2. Set Your API Key
 
-Replace `"Your API Key Here"` with your personal Squidle+ token.
+Replace `"your_api_key_here"` with your personal Squidle+ token.
 
-### 3. Choose Your Dataset
+### 3. Choose Your Label Scheme
 
-Download the dataset media file from the Squidle platform and update the annotation set ID in the notebook to match.
+The script defaults to **Catami 1.4 (extended)** (ID: 54).  
+You can change this by updating `label_scheme_id` and `label_scheme_name` in the script.
 
-### 4. Run the Notebook
+### 4. Run the Script
 
-Open and execute `Squidle_API_Example.ipynb` in Jupyter or VS Code.
+```bash
+python Squidle_API_Extended.py
+```
+
+- Annotations will be saved to `Annotations_From_API.csv`  
+- Media files will be downloaded into the `Images/` directory  
 
 ---
 
 ## ⚠️ Notes
 
-- Only annotation download is demonstrated  
-- Annotation set ID must be specified manually  
-- Dataset selection and media downloads still require use of the Squidle+ website
+- Only public and finalised annotation sets are retrieved  
+- Label scheme ID must be set manually in the script  
+- API calls are paginated and handled automatically  
+- Image downloads require an active internet connection  
+- Match annotaions to respective images using the shared image IDs
 
 ---
 
 ## 🛠️ Future Work
 
-There is significant work needed to bring this API integration up to modern, professional standards. I'm currently working on:
-
-- Filtering across label schemes to download multiple sets of images and annotations
-- Moving entirely to API-based workflows without relying on the website
-
-If you have ideas, suggestions, or would like to collaborate, feel free to contact me at:  
-📧 **[jean.terblans@gmail.com]**
-
----
-
-## 📚 Resources
-
-- [Squidle+ GitHub (Archived)](https://github.com/developmentseed/squidle)  
-- [Squidle+ API Docs (if available)](https://squidle.org/api/docs/)  
-- [Squidle_ML_Algorithm by leoguen](https://github.com/leoguen/Squidle_ML_Algorithm)
+Potential improvements include:
+- Code to match labels to their broader class in Catami 1.4 scheme
+- Support for multiple label schemes in a single run  
+- More robust error handling and logging  
+- Option to download annotations and media selectively
