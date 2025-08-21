@@ -54,7 +54,7 @@ python Squidle_API_Extended.py
 
 ## 🛠️ Optional: Map to Higher-Order CATAMI Labels
 
-For users who want to group fine-grained CATAMI 1.4 (extended) labels into broader classes, an **optional** helper script is included: `catami_broad_mapper.py`.  
+For users who want to group fine-grained CATAMI 1.4 (extended) labels into broader classes, an **optional** helper script is included: `Map_Catami_Labels.py`.  
 It reads your exported annotations CSV and adds a `broad_class` column by moving up _N_ levels in the lineage from the leaf.
 
 ### Install
