@@ -65,7 +65,7 @@ No extra install required beyond Python’s standard library (`argparse`, `csv`,
 
 **Terminal:**
 ```bash
-python catami_broad_mapper.py --input Annotations_From_API.csv --output Annotations_With_Broad.csv --levels 1
+python Map_Catami_Labels.py --input Annotations_From_API.csv --output Annotations_With_Broad.csv --levels 1
 ```
 
 ### What `--levels` Means
