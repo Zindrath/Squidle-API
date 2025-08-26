@@ -1,4 +1,4 @@
-# Squidle+ API Extended Example
+# Squidle+ API Example
 
 This repository provides an updated working example of interfacing with the **Squidle+ API** to retrieve both image annotations and associated media. It demonstrates filtering by label schemes, downloading annotations in bulk, and saving both annotations and images locally.
 
