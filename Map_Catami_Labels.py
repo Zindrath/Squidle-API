@@ -3,10 +3,8 @@
 Map CATAMI 1.4 (extended) labels to broader classes using lineage.
 
 Usage:
-  python catami_broad_mapper.py \
-      --input Annotations_From_API.csv \
-      --output Annotations_With_Broad.csv \
-      --levels 1
+  python Map_Catami_Labels.py --input Annotations_From_API.csv --output Annotations_With_Broad.csv --levels 1
+
 """
 
 import argparse
@@ -97,3 +95,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
